@@ -1,0 +1,86 @@
+// We can use @import to grab the code from another Sass file and include it in this Sass file
+// Note I have a file called _reset.scss. Sass automatically adds .scss to the end and removes any preceding underscores
+@import 'reset';
+
+// In Sass we can create variables. They work similar to variables in JavaScript except instead of using const or let, we use a $
+$title-font: 'Jua', sans-serif;
+$body-font: 'Abel', sans-serif;
+
+$color-dark-gray: #2B2B2B;
+$color-blue: #07A7D8;
+$color-off-white: #F4F4F4;
+
+body {
+    height: 100vh;
+    background-color: $color-dark-gray;
+}
+
+p {
+    font-family: $body-font;
+}
+
+div.container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px repeat(4, 1fr);
+}
+
+aside {
+    background-color: $color-blue;
+    margin-bottom: 20px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: grid;
+    width: 80%;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px repeat(3, 1fr);
+}
+
+section {
+    background-color: $color-blue;
+
+    p {
+        color: $color-off-white;
+    }
+}
+
+section.heading {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-color: transparent;
+
+    h1 {
+        font-family: $title-font;
+        color: $color-off-white;
+        font-size: 3em;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    div.container {
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    aside {
+        margin-bottom: 0px;
+        margin-right:20px;
+    }
+
+    main {
+        display: grid;
+        height: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 50px 1fr;
+    }
+
+    section.heading {
+        grid-column: span 3;
+    }
+}
