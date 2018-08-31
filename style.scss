@@ -72,9 +72,7 @@ section {
 }
 
 aside {
-        
     ul {
-        
         li {
             height:28px;
             width:34px;
@@ -113,7 +111,6 @@ section.heading {
 
 @media #{$media} and ($feature: $value) {
 
-
     aside {
         margin-bottom: 0px;
         margin-right:20px;
@@ -131,9 +128,7 @@ section.heading {
     }
 
     aside {
-
         ul {
-            
             li {
                 margin-bottom:15px;
                 float: none;
