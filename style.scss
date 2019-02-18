@@ -7,12 +7,17 @@ $title-font: 'Jua', sans-serif;
 $body-font: 'Abel', sans-serif;
 
 $color-dark-gray: #2B2B2B;
-$color-blue: #07A7D8;
+$color-blue: #88B6DA;
 $color-off-white: #F4F4F4;
 
 $media: screen;
 $feature: min-width;
 $value: 600px;
+
+%give-me-borders {
+    border: 1px solid white;
+    font-family: monospace;
+}
 
 body {
     height: 100vh;
@@ -31,10 +36,13 @@ div.container {
     height: 100%;
     grid-template-columns: 1fr;
     grid-template-rows: 200px repeat(4, 1fr);
-    @media #{$media} and ($feature: $value) {
-        grid-template-columns: 100px 1fr;
-        grid-template-rows: 1fr;
+
+    @media screen and (min-width: $value) {
+		grid-template-columns: 100px 1fr;
+		grid-template-rows: 1fr;
     }
+    
+    @extend %give-me-borders;
 }
 
 aside {
@@ -69,6 +77,8 @@ section {
         list-style: square;
         margin-left: 20px;
     }
+
+    @extend %give-me-borders;
 }
 
 aside {
